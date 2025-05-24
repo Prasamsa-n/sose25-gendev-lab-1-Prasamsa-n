@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/de.buw.se.gendev.lab1/src-gen" creationIcons="false"
+    editDirectory="/de.buw.se.gendev.lab1.edit/src-gen" editorDirectory="/de.buw.se.gendev.lab1.editor/src-gen"
+    modelPluginID="de.buw.se.gendev.lab1" modelName="Lab1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>lab1.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Lab1" basePackage="de.buw.se.gendev" disposableProviderFactory="true"
+      ecorePackage="lab1.ecore#/">
+    <genClasses ecoreClass="lab1.ecore#//Hospital">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Hospital/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Hospital/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lab1.ecore#//Hospital/department"/>
+    </genClasses>
+    <genClasses ecoreClass="lab1.ecore#//Department">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Department/deptName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lab1.ecore#//Department/dooctor"/>
+    </genClasses>
+    <genClasses ecoreClass="lab1.ecore#//Doctor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Doctor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Doctor/experience"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lab1.ecore#//Doctor/patient"/>
+    </genClasses>
+    <genClasses ecoreClass="lab1.ecore#//Patient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Patient/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Patient/age"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lab1.ecore#//Patient/medicalrecord"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lab1.ecore#//Patient/dooctor"/>
+    </genClasses>
+    <genClasses ecoreClass="lab1.ecore#//MedicalRecord">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//MedicalRecord/status"/>
+    </genClasses>
+    <genClasses ecoreClass="lab1.ecore#//Surgeon">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//Surgeon/surgeryType"/>
+    </genClasses>
+    <genClasses ecoreClass="lab1.ecore#//GeneralPhysician">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lab1.ecore#//GeneralPhysician/specialization"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
